@@ -4,6 +4,7 @@ import argparse
 
 #自作関数をインポート
 from Argument.CheckArgument import *
+from CopyJson.CopyJsonFile import *
 
 #引数や-hのオプションを定義
 parser = argparse.ArgumentParser(prog='MWS課題，動的解析の機能検索用プログラム',description='オプションと引数の説明',
@@ -33,5 +34,11 @@ deadErrorEnd(checkNumber)
 checkNumber = isCsvFile(csvfile)
 #エラーチェック
 deadErrorEnd(checkNumber)
+
+#csvファイルの読み出し
+jsonlist = readCsvfile(csvfile)
+#print jsonlist
+
+copyJsonsFile(copyfolder, sendfolder, jsonlist)
 
 print "無問題☆"

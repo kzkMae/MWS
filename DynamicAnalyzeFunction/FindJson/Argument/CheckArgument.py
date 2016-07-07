@@ -29,3 +29,11 @@ def isCsvFile(csvFile):
     if not(os.path.isfile(csvFile)):
         checkNum = 1
     return checkNum
+
+#念のための確認作業
+def isJsonFiles(sendFolder, jsonsList):
+    checkNum = 0
+    for row in jsonsList:
+        if not (os.path.isfile(sendFolder+row)):
+            print "%s : そんなファイルはないよ" % (row)
+    return checkNum
